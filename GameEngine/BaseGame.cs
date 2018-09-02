@@ -22,7 +22,5 @@ namespace GameEngine
         public abstract bool GameIsOver();
 
         public abstract bool PlaceMark(int x, int y);
-
-        public abstract char Results();
     }
 }

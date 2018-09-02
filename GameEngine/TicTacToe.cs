@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Interfaces;
 
 namespace GameEngine
@@ -7,7 +8,15 @@ namespace GameEngine
     {
         public override bool GameIsOver()
         {
-            throw new NotImplementedException();
+            bool isFull = Board.Cast<char>().Where(s => s == Char.MinValue).Count() == 0;
+
+            return isFull || IsWon();
+        }
+
+        public bool IsWon()
+        {
+            //TODO Complete implementation
+            return false;
         }
 
         public override bool PlaceMark(int x, int y)
@@ -28,18 +37,6 @@ namespace GameEngine
             }
 
             return success;
-        }
-
-        public override char Results()
-        {
-            char result = Char.MinValue;
-
-            if (GameIsOver())
-            {
-                result = !IsXNext ? 'O' : 'X';
-            }
-
-            return result;
         }
     }
 }

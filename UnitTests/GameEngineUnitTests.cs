@@ -17,14 +17,20 @@ namespace UnitTests
             bool isOver = game.GameIsOver();
 
             //Assert
-            Assert.True(isOver, "The game should not be over because nothing has happened yet.");
+            Assert.False(isOver, "The game should not be over because nothing has happened yet.");
         }
 
         [Fact]
-        public void GameIsOver_True()
+        public void GameIsOver_IsWon_True()
         {
             //Arrange
             IGame game = new TicTacToe();
+
+            /*             
+                 X | X | X
+                   | O |  
+                   |   | O
+           */
 
             //Act
             game.PlaceMark(0, 0);
@@ -32,6 +38,35 @@ namespace UnitTests
             game.PlaceMark(0, 1);
             game.PlaceMark(2, 2);
             game.PlaceMark(0, 2);
+
+            bool isOver = game.GameIsOver();
+
+            //Assert
+            Assert.True(isOver, "The game should be over because X has won.");
+        }
+
+        [Fact]
+        public void GameIsOver_IsFull_True()
+        {
+            //Arrange
+            IGame game = new TicTacToe();
+
+            /*             
+                  X | O | X
+                  X | X | O
+                  O | X | O
+            */
+
+            //Act
+            game.PlaceMark(0, 0);
+            game.PlaceMark(1, 0);
+            game.PlaceMark(2, 0);
+            game.PlaceMark(2, 1);
+            game.PlaceMark(1, 1);
+            game.PlaceMark(0, 2);
+            game.PlaceMark(0, 1);
+            game.PlaceMark(2, 2);
+            game.PlaceMark(1, 2);
 
             bool isOver = game.GameIsOver();
 

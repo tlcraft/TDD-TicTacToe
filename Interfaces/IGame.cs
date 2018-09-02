@@ -9,7 +9,5 @@ namespace Interfaces
         bool PlaceMark(int x, int y);
 
         bool GameIsOver();
-
-        char Results();
     }
 }
