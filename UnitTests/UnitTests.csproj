@@ -17,6 +17,7 @@
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\TicTacToe\TicTacToeConsole.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,5 @@
-using System;
-using Xunit;
-using GameEngine;
 using Interfaces;
+using Xunit;
 
 namespace UnitTests
 {
@@ -11,7 +9,7 @@ namespace UnitTests
         public void GameIsOver_False()
         {
             //Arrange
-            IGame game = new TicTacToe();
+            IGame game = new GameEngine.TicTacToe();
 
             //Act
             bool isOver = game.GameIsOver();
@@ -24,7 +22,7 @@ namespace UnitTests
         public void GameIsOver_IsWon_True()
         {
             //Arrange
-            IGame game = new TicTacToe();
+            IGame game = new GameEngine.TicTacToe();
 
             /*             
                  X | X | X
@@ -49,7 +47,7 @@ namespace UnitTests
         public void GameIsOver_IsFull_True()
         {
             //Arrange
-            IGame game = new TicTacToe();
+            IGame game = new GameEngine.TicTacToe();
 
             /*             
                   X | O | X
@@ -77,7 +75,7 @@ namespace UnitTests
         [Fact]
         public void PlaceMark_OnGrid()
         {
-            IGame game = new TicTacToe();
+            IGame game = new GameEngine.TicTacToe();
 
             bool success = game.PlaceMark(1, 1);
 
@@ -87,7 +85,7 @@ namespace UnitTests
         [Fact]
         public void PlaceMark_OffGrid()
         {
-            IGame game = new TicTacToe();
+            IGame game = new GameEngine.TicTacToe();
 
             bool success = game.PlaceMark(-1, -1);
 
@@ -97,7 +95,7 @@ namespace UnitTests
         [Fact]
         public void PlaceMark_AlreadyUsedLocation()
         {
-            IGame game = new TicTacToe();
+            IGame game = new GameEngine.TicTacToe();
             game.PlaceMark(1, 1);
             bool success = game.PlaceMark(1, 1);
 

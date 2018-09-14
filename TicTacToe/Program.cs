@@ -1,6 +1,6 @@
-﻿using System;
-using Interfaces;
-using GameEngine;
+﻿using GameEngine;
+using System;
+using TicTacToeConsole;
 
 namespace TicTacToe
 {
@@ -10,22 +10,14 @@ namespace TicTacToe
         {
             Console.WriteLine("Tic Tac Toe");
 
-            IGame game = new GameEngine.TicTacToe();
+            BaseGame game = new GameEngine.TicTacToe();
+            Display console = new Display();
+
+            console.PrintBoard(game);
             //TODO Implement game loop
             //TODO Gather user input
-        }
-        
-        // TODO Move to a display class
-        public char Results(BaseGame game)
-        {
-            char result = Char.MinValue;
 
-            if (game.GameIsOver())
-            {
-                result = !game.IsXNext ? 'O' : 'X';
-            }
-
-            return result;
+            Console.ReadLine();
         }
     }
 }
