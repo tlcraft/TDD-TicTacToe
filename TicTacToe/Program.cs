@@ -11,9 +11,9 @@ namespace TicTacToe
             Console.WriteLine("Tic Tac Toe");
 
             BaseGame game = new GameEngine.TicTacToe();
-            Display console = new Display();
+            Display console = new Display(game);
 
-            console.PrintBoard(game);
+            console.PrintBoard();
             //TODO Implement game loop
             //TODO Gather user input
 

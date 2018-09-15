@@ -6,27 +6,37 @@ namespace TicTacToeConsole
 {
     public class Display : IDisplay
     {
-        public void PrintBoard(IGame game)
+        public Display(BaseGame game)
         {
-            //TODO Remove all this casting!!
-            for (int i = 0; i < ((BaseGame)game).Board.GetLength(0); i++)
+            Game = game;
+        }
+
+        private BaseGame Game
+        {
+            get;
+            set;
+        }
+        
+        public void PrintBoard()
+        {
+            for (int i = 0; i < Game.Board.GetLength(0); i++)
             {
-                for (int j = 0; j < ((BaseGame)game).Board.GetLength(1); j++)
+                for (int j = 0; j < Game.Board.GetLength(1); j++)
                 {
-                    Console.Write(((BaseGame)game).Board[i, j]);
+                    Console.Write(Game.Board[i, j]);
                 }
 
                 Console.WriteLine();
             }
         }
 
-        public char Results(IGame game)
+        public char Results()
         {
             char result = Char.MinValue;
 
-            if (game.GameIsOver())
+            if (Game.GameIsOver())
             {
-                result = !((BaseGame)game).IsXNext ? 'O' : 'X';
+                result = !Game.IsXNext ? 'O' : 'X';
             }
 
             return result;

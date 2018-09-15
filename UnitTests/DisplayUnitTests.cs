@@ -12,10 +12,10 @@ namespace UnitTests
         {
             //Arrange
             BaseGame game = new GameEngine.TicTacToe();
-            IDisplay console = new Display();
+            IDisplay console = new Display(game);
 
             //Act
-            char result = console.Results(game);
+            char result = console.Results();
 
             //Assert
             Assert.Equal(char.MinValue, result);

@@ -2,7 +2,7 @@
 {
     public interface IDisplay
     {
-        void PrintBoard(IGame game);
-        char Results(IGame game);
+        void PrintBoard();
+        char Results();
     }
 }
