@@ -16,7 +16,22 @@ namespace TicTacToeConsole
             get;
             set;
         }
-        
+
+        public string GameEndMessage()
+        {
+            return MessageEnums.Messages.GameEnding.GetDescription();
+        }
+
+        public string GameStartMessage()
+        {
+            return MessageEnums.Messages.GameStart.GetDescription();
+        }
+
+        public string GatherInputMessage()
+        {
+            return MessageEnums.Messages.GatherInput.GetDescription();
+        }
+
         public void PrintBoard()
         {
             for (int i = 0; i < Game.Board.GetLength(0); i++)

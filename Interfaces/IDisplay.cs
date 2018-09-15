@@ -4,5 +4,8 @@
     {
         void PrintBoard();
         char Results();
+        string GameStartMessage();
+        string GameEndMessage();
+        string GatherInputMessage();
     }
 }
