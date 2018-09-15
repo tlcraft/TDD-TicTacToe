@@ -14,6 +14,8 @@ namespace TicTacToe
             Display console = new Display(game);
 
             console.PrintBoard();
+            Console.WriteLine(console.GameStartMessage());
+            Console.WriteLine(console.GatherInputMessage());
             //TODO Implement game loop
             //TODO Gather user input
 
