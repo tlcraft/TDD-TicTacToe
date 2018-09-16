@@ -34,11 +34,19 @@ namespace TicTacToeConsole
 
         public void PrintBoard()
         {
-            for (int i = 0; i < Game.Board.GetLength(0); i++)
+            int xLength = Game.Board.GetLength(0);
+            int yLength = Game.Board.GetLength(1);
+
+            for (int i = 0; i < xLength; i++)
             {
-                for (int j = 0; j < Game.Board.GetLength(1); j++)
+                for (int j = 0; j < yLength; j++)
                 {
                     Console.Write(Game.Board[i, j]);
+
+                    if (j != yLength-1)
+                    {
+                        Console.Write(" | ");
+                    }
                 }
 
                 Console.WriteLine();
@@ -51,7 +59,7 @@ namespace TicTacToeConsole
 
             if (Game.GameIsOver())
             {
-                result = !Game.IsXNext ? 'O' : 'X';
+                result = !Game.IsXNext ? 'X' : 'O';
             }
 
             return result;

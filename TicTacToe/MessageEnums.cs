@@ -12,8 +12,14 @@ namespace TicTacToeConsole
             GameEnding = 1,
             [Description("Game-on!")]
             GameStart = 2,
-            [Description("Please enter in the coordinates for your move.")]
-            GatherInput = 3
+            [Description("Please enter in the coordinates for your move. These are zero based.")]
+            GatherInput = 3,
+        }
+
+        public enum Errors
+        {
+            [Description("Please enter in a positive zero based coordinate. For example (1, 1).")]
+            InputError = 1
         }
     }
 
