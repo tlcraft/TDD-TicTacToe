@@ -22,6 +22,47 @@ namespace UnitTests
         }
 
         [Fact]
+        public void Results_XWins()
+        {
+            //Arrange
+            BaseGame game = new GameEngine.TicTacToe();
+            IDisplay console = new Display(game);
+
+            //Act
+            game.PlaceMark(0, 0);
+            game.PlaceMark(2, 2);
+            game.PlaceMark(0, 1);
+            game.PlaceMark(1, 1);
+            game.PlaceMark(0, 2);
+
+            char result = console.Results();
+
+            //Assert
+            Assert.Equal('X', result);            
+        }
+
+        [Fact]
+        public void Results_OWins()
+        {
+            //Arrange
+            BaseGame game = new GameEngine.TicTacToe();
+            IDisplay console = new Display(game);
+
+            //Act
+            game.PlaceMark(0, 0);
+            game.PlaceMark(2, 2);
+            game.PlaceMark(0, 1);
+            game.PlaceMark(2, 1);
+            game.PlaceMark(1, 0);
+            game.PlaceMark(2, 0);
+
+            char result = console.Results();
+
+            //Assert
+            Assert.Equal('O', result);
+        }
+
+        [Fact]
         public void GameEndingMessage()
         {
             //Arrange

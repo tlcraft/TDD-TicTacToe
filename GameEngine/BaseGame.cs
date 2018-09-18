@@ -14,7 +14,7 @@ namespace GameEngine
         {
             get;
             set;
-        }
+        } = true;
 
         public abstract bool GameIsOver();
 
