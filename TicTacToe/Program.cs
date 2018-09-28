@@ -8,7 +8,7 @@ namespace TicTacToe
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Tic Tac Toe");
+            Console.WriteLine(MessageEnums.Messages.Title.GetDescription());
 
             BaseGame game = new GameEngine.TicTacToe();
             Display console = new Display(game);
@@ -28,7 +28,11 @@ namespace TicTacToe
 
             Console.WriteLine(console.GameEndMessage());
             console.PrintBoard();
-            Console.WriteLine("The wiiner is: " + console.Results());
+            if (game.IsWon())
+            {
+                Console.WriteLine(MessageEnums.Messages.Result.GetDescription() + console.Results());
+            }
+
             Console.ReadLine();
         }
 

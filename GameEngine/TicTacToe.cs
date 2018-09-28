@@ -66,7 +66,7 @@ namespace GameEngine
             return isFull || IsWon();
         }
 
-        private bool IsWon()
+        public override bool IsWon()
         {
             bool isWon = false;
             

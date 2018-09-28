@@ -14,6 +14,10 @@ namespace TicTacToeConsole
             GameStart = 2,
             [Description("Please enter in the coordinates for your move. These are zero based.")]
             GatherInput = 3,
+            [Description("Tic-tac-toe")]
+            Title = 4,
+            [Description("The winner is: ")]
+            Result = 5
         }
 
         public enum Errors

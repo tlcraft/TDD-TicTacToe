@@ -16,6 +16,7 @@ namespace GameEngine
             set;
         } = true;
 
+        public abstract bool IsWon();
         public abstract bool GameIsOver();
 
         public abstract bool PlaceMark(int x, int y);
