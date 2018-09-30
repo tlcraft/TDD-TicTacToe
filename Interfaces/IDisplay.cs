@@ -2,10 +2,12 @@
 {
     public interface IDisplay
     {
-        void PrintBoard();
-        char Results();
         string GameStartMessage();
         string GameEndMessage();
         string GatherInputMessage();
+        void PrintBoard();
+        string Result();
+        string Title();
+        char Winner();
     }
 }

@@ -6,6 +6,8 @@ namespace GameEngine
 {
     public class TicTacToe : BaseGame
     {
+        public TicTacToe(int x, int y) : base(x, y) { }
+
         private readonly List<Coordinate[]> lines = new List<Coordinate[]>()
         {
             new Coordinate []
@@ -89,9 +91,9 @@ namespace GameEngine
             bool success = false;
 
             if (x < 0
-                || x > Board.GetLength(0)
+                || x > Board.GetLength(0)-1
                 || y < 0
-                || y > Board.GetLength(1))
+                || y > Board.GetLength(1)-1)
                 return success;
 
             if (Board[x, y] == Char.MinValue)

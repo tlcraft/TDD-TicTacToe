@@ -32,6 +32,16 @@ namespace TicTacToeConsole
             return MessageEnums.Messages.GatherInput.GetDescription();
         }
 
+        public string Title()
+        {
+            return MessageEnums.Messages.Title.GetDescription();
+        }
+
+        public string Result()
+        {
+            return MessageEnums.Messages.Result.GetDescription() + Winner();
+        }
+
         public void PrintBoard()
         {
             int xLength = Game.Board.GetLength(0);
@@ -53,11 +63,11 @@ namespace TicTacToeConsole
             }
         }
 
-        public char Results()
+        public char Winner()
         {
             char result = Char.MinValue;
 
-            if (Game.GameIsOver())
+            if (Game.IsWon())
             {
                 result = !Game.IsXNext ? 'X' : 'O';
             }

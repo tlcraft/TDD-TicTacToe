@@ -8,11 +8,10 @@ namespace TicTacToe
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(MessageEnums.Messages.Title.GetDescription());
-
-            BaseGame game = new GameEngine.TicTacToe();
+            BaseGame game = new GameEngine.TicTacToe(3, 3);
             Display console = new Display(game);
 
+            Console.WriteLine(console.Title());
             Console.WriteLine(console.GameStartMessage());
 
             int[] coordinates = new int[2];
@@ -30,7 +29,7 @@ namespace TicTacToe
             console.PrintBoard();
             if (game.IsWon())
             {
-                Console.WriteLine(MessageEnums.Messages.Result.GetDescription() + console.Results());
+                Console.WriteLine(console.Result());
             }
 
             Console.ReadLine();

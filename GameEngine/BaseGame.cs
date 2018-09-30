@@ -4,11 +4,15 @@ namespace GameEngine
 {
     public abstract class BaseGame : IGame
     {
+        public BaseGame(int x, int y)
+        {
+            Board = new char[x, y];
+        }
+
         public char[,] Board 
         {
             get;
-            set;
-        } = new char[3,3];
+        }
 
         public bool IsXNext
         {
@@ -18,7 +22,6 @@ namespace GameEngine
 
         public abstract bool IsWon();
         public abstract bool GameIsOver();
-
         public abstract bool PlaceMark(int x, int y);
     }
 }
